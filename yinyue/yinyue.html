@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="http://at.alicdn.com/t/font_1472646293_377639.css"><!--小图标引用-->
+	</head>
+	<style type="text/css">
+		body{							/*线性渐变*/
+			/*background: -webkit-linear-gradient(right,#5621b8 0%,#781fa3 50%,#bc24b7 90%)*/
+			background: -webkit-linear-gradient(right, #bc24b7 30%,#781fa3 50% ,#5621b8 80%);
+		}
+		ul,li,p{										/*通篇定位*/
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		
+		#box{
+			width: 1000px;
+			height: 600px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -300px;
+			margin-left: -500px;
+		}
+		.top{
+			height: 400px;
+		}
+		.zuo{
+			float: left;
+			position: relative;
+			width: 400px;
+			height: 400px;
+			
+		}
+		.die{
+			width: 400px;
+			height: 400px;
+			background: url(img/cd.png) no-repeat center;
+			background-size:100%;
+			border-radius: 50%;
+			box-shadow: 1px 1px 15px #000;
+			
+		}
+		
+		.zhuan{
+			width: 200px;
+			height: 200px;
+			background: url(img/img.jpg) no-repeat center;
+			position: absolute;			/*元素垂直居中*/
+			top: 50%;
+			left: 50%;
+			margin-top: -100px;
+			margin-left: -100px;
+			background-size:100%;
+			border-radius: 50%;
+		}
+		@-webkit-keyframes dong{
+			from{-webkit-transform: rotate(0deg);}
+			to{-webkit-transform: rotate(360deg);}
+		}
+		.fang{
+			position: absolute;
+			top: 0;
+			right: -20px;
+			transform-origin:60px 12px ;		/*旋转原点*/
+			transform: rotate(-21deg);
+			-webkit-transition: all 1s;
+		}
+		.you{
+			margin-top: 100px;
+			width: 500px;
+			float: right;
+			text-align: center;
+			font-family: "微软雅黑";
+			color: #fff;
+			font-size: 18px;
+			
+		}
+		.xia{
+			margin-top: 20px;
+		}
+		.iconfont{					/*小图标*/
+			color: #FFFFFF;
+			cursor: pointer;
+			font-size: 25px;
+		}
+		.pl-c-l{
+			float: left;
+			margin-left: 80px;
+		}
+		.pl-c-r{
+			float: right;
+			position: relative;
+			margin-right: 80px;
+		}
+		.pl-b{
+			float: left;
+			margin-left: 50px;
+		}
+		.vol{
+			display: none;
+		    position: absolute;
+		    width: 8px;
+		    height: 100px;
+		    top: -100px;
+		    left: 70px;
+		    background:  #E2D7D7;
+		    border-radius: 15px;
+		    border: 3px solid #fff;
+		}
+		.vol .vol1{
+			position: absolute;
+		    width: 8px;
+		    height: 50px;
+		    bottom: 0px;
+		    left: 0px;
+		    background:#EF6343;
+		    border-radius: 4px;
+		}
+		.jindu{
+			vertical-align: top;		/*内联元素垂直居中*/
+			display: inline-block;
+			margin-top: 12px;
+			margin-left: 16px;
+			width: 300px;
+			height: 6px;
+			border-radius: 1px;
+			background: rgba(0,0,0,.4);
+			position: relative;
+			cursor: pointer;
+		}
+		.xxx{
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-radius: 1px;
+			background: #fff;
+			height: 6px;
+		}
+		.center{
+			width: 800px;
+			margin: 80px auto;
+			font-family: "微软雅黑"
+		}
+		.center li{
+			text-align:center; 
+			width: 162px;
+			font-size: 27px;
+			color: #fff;
+			float: left;
+			padding: 5px 5px 0 ;
+			height: 75px;
+			line-height: 40px;
+			margin: 0 10px;
+			border-radius: 8px;
+			position: relative;
+			box-shadow: 2px 2px 4px rgba(0,0,0,.3);	/*阴影,背景色作为li的背景色很好看*/
+			cursor: pointer;		/*手性*/
+		}
+		.center li p{
+			clear: both;			/*清除浮动*/
+			font-size: 12px;
+			line-height: 20px;
+			
+		}
+		.center li b{
+			font-size: 14px;
+		}
+		.center li:after{    /*选择器在被选元素的内容后面插入内容。*/
+			content: '';     /*content 属性来指定要插入的内容。*/
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: rgba(255,255,255,.3);			/*透明度*/
+			border-radius: 8px 8px 0 0;
+			width:100%;
+			height: 50%;
+		}
+		.center li:hover{
+			-webkit-filter: blur(1px);     /*模糊度*/
+		}
+		
+	</style>
+	<body>
+		<div id="box">
+			<div class="top">
+				<div class="zuo">
+					<div class="die">
+						<div class="zhuan"></div>
+					</div>
+					<img class="fang" src="img/cd_tou.png" />
+				</div>
+				<div class="you">
+					<div class="shang">
+						<h1 style="font-size: 50px;font-weight: normal;">演员</h1>
+						<span style="font-size: 24px;">薛之谦</span>&nbsp;
+						<span >专辑：绅士</span>
+					</div>
+					<div class="xia">
+						<div class="pl-c-l">
+						 <span class="iconfont icon-back prev"></span>
+						 <span class="iconfont icon-you-copy play2"></span>
+						 <span class="iconfont icon-kuai next"></span>
+						</div>
+						<div class="pl-c-r">
+							<span class="iconfont icon-suijibofang"></span>&nbsp;
+							<span class="iconfont icon-zhongxinbofangicon"></span>&nbsp;
+							<span class="iconfont icon-1yinpinbofangmin"></span>
+							<div class="vol">
+								<div class="vol1"></div>
+							</div>
+						</div>
+						<div class="pl-b">
+							<span class="time" style="font-size: 12px;">
+								<n class="min1">00</n>:<n class="sec1">00</n>/<n class="min2">00</n>:<n class="sec2">00</n> 
+							</span>
+								<div class="jindu">
+									<p class="xxx"></p>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+			<ul class="center">
+				<li>丑八怪<p><b>薛之谦</b><span>专辑：绅士</span></p></li>
+				<li>绅士<p><b>薛之谦</b><span>专辑：绅士</span></p></li>
+				<li>一半<p><b>薛之谦</b><span>专辑：绅士</span></p></li>
+				<li>温柔的雪<p><b>薛之谦</b><span>专辑：未完成的歌</span></p></li>
+			</ul>
+		</div>
+		<audio src="music/演员 - 薛之谦.mp3" type="audio/mp3" ></audio>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+			var audio=document.querySelector('audio')
+			var onoff=true;
+			var onoff1=true;
+			function zhuanpanactive(){
+				clearTimeout(tt)
+				rotateClear()
+				$('.play2').removeClass('icon-zantingjian ');
+				$('.play2').addClass('icon-you-copy');
+				onoff=false
+				var tt=setTimeout(function(){
+					$('.play2').removeClass('icon-you-copy ');
+					$('.play2').addClass('icon-zantingjian');
+					$('.die').css('animation','dong 3s linear infinite .5s')
+					$('.fang').css('transform','rotate(0deg)')
+					musicTime()
+				},500)
+			}
+			function musicStart(){
+				audio.load()
+				audio.play()
+			}
+			function qiehuan(){
+				$('.play2').removeClass('icon-zantingjian ');
+				$('.play2').addClass('icon-you-copy');
+			}
+			function musicTime(){
+				var jindu=audio.duration;
+				console.log(jindu)
+				$('.min2').text(parseInt(jindu/60))
+				$('.sec2').text(parseInt(jindu%60))
+			}
+			function rotateClear(){
+				$('.die').css('animation','')
+				$('.fang').css('transform','rotate(-21deg)')
+			}
+			var arrmusics=[["music/丑八怪 - 薛之谦.mp3","丑八怪"],["music/绅士 - 薛之谦.mp3","绅士"],["music/一半 - 薛之谦.mp3","一半"],["music/认真的雪 - 薛之谦.mp3","温柔的雪"]];
+			
+			var $index=4
+			$('li').click(function(){
+				zhuanpanactive()
+				$index=$(this).index()
+				audio.src=arrmusics[$index][0];
+				$('h1').text(arrmusics[$index][1])
+				musicStart()
+				})
+			console.log($index);
+			audio.addEventListener('timeupdate',function(){
+				shishi=audio.currentTime;
+				var Miao=parseInt(shishi/60)<10?'0'+parseInt(shishi/60):parseInt(shishi/60);
+				var  sec=parseInt(shishi%60)<10 ? "0"+parseInt(shishi%60):parseInt(shishi%60);
+				
+				$('.min1').text(Miao);
+				$('.sec1').text(sec);
+				
+				var percent=audio.currentTime/audio.duration;
+				$(".xxx").css('width', 300*percent);
+			})
+			$(".prev").click(function() {
+				$index--;
+				if ($index<0) $index=3;
+				audio.src=arrmusics[$index][0];
+				$("h1").text(arrmusics[$index][1]);
+				musicStart();
+				zhuanpanactive();
+			});
+			$(".next").click(function() {
+				$index++;
+				if ($index>3) $index=0;
+				audio.src=arrmusics[$index][0];
+				$("h1").text(arrmusics[$index][1]);
+				musicStart();
+				zhuanpanactive();
+			});
+			$('.icon-suijibofang').click(function(event){
+			    	$index=Math.floor(Math.random()*4);
+			    	audio.src=arrmusics[$index][0];
+			    	$("h1").text(arrmusics[$index][1]);
+					musicStart();
+					zhuanpanactive();
+			    });
+			    $('.jindu').click(function(ev){
+						ev=ev||event;
+						var jindu_w=ev.clientX-$(".jindu").offset().left; 
+						console.log(jindu_w)
+						audio.currentTime=parseInt(jindu_w/300*audio.duration);
+						console.log(audio.currentTime)
+						
+					})
+			$('.play2').click(function(){
+				musicTime()
+				if(onoff){
+					audio.play();
+					$(this).removeClass('icon-you-copy');
+					$(this).addClass('icon-zantingjian');
+					$('.die').css('animation','dong 3s linear infinite .5s')
+					$('.fang').css('transform','rotate(0deg)')
+				}else{
+					
+					audio.pause()
+					$(this).removeClass('icon-zantingjian');
+					$(this).addClass('icon-you-copy');
+					rotateClear();
+				}
+				onoff=!onoff;
+			})
+			$(".icon-1yinpinbofangmin").mouseover(function() {
+				$(".vol").show();
+			}).mouseout(function(event) {
+				 t=setTimeout(function(){
+				$(".vol").hide();
+				},1000);
+			});
+			$(".icon-1yinpinbofangmin").click(function() {
+				if (onoff1) {
+					volpast= $(".vol1").css('height');
+					$(this).attr('class', 'iconfont icon-1');
+				audio.volume=0;
+				$(".vol1").css('height', 0);
+				}else{   
+					$(this).attr('class', 'iconfont icon-1yinpinbofangmin');
+					audio.volume = parseInt(volpast)/100;
+					console.log(audio.volume);
+					$('.vol1').css('height', volpast);
+				}
+				onoff1=!onoff1;
+			});
+			
+			$(".vol").mouseover(function(){	
+				clearTimeout(t)
+				$(this).show();
+			}).mouseout(function(event) {
+	
+				$(this).hide();
+			});
+			$(".vol").click(function(ev) {
+			ev=ev||event;
+			var volH=$('.vol').offset().top + 100 - event.clientY
+			$(".vol1").css('height', volH);
+			audio.volume=volH/100;
+		});
+			$(".icon-zhongxinbofangicon").click(function(){
+				musicStart();
+				zhuanpanactive()
+			})
+	</script>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+</html>
